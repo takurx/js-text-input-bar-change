@@ -1,0 +1,55 @@
+<html>
+<head>
+    <style type="text/css">
+        #title {
+        color: #888888;
+        }
+
+        li.list4 {
+        color: #777777;
+        }
+
+        html {
+        background-color: #EEEEEE;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello html</h1>
+    <ul>
+        <li class="list4">abcde</li>
+        <li id="list3">fghik</li>
+        <li id="list1"></li>
+        <li id="list2"></li>
+    </ul>
+    0<input id="color_red" type="range" name="color_red" min="0" max="255" step="1">255
+    0<input id="color_green" type="range" name="color_green" min="0" max="255" step="1">255
+    0<input id="color_blue" type="range" name="color_blue" min="0" max="255" step="1">255
+
+    <script>
+        let elem1 = document.getElementById("title");
+        //elem1.style.color = "#E25B19";
+        color_text_test = "test";
+        let list1 = document.getElementById("list1");
+        list1.innerHTML = color_text_test;
+        let color = document.getElementById("color_red").value;
+        //elem1.style.color = color;
+        //document.getElementById("list3").style.color = color;
+        let list2 = document.getElementById("list2");
+        list2.innerHTML = String(color);
+
+        selectElement = document.addEventListener('change', (event) => {
+        let color_red = document.getElementById("color_red").value;
+        let color_green = document.getElementById("color_green").value;
+        let color_blue = document.getElementById("color_blue").value;
+        let test_text_color = document.getElementById("list3");
+        list2.innerHTML = String(color_red);
+        //test_text_color.style.color = "#000000";
+        //elem1.style.color = "#000000";
+        //elem1.style.color = "rgb(0, 0, 0)";
+        elem1.style.color = "rgb(" + color_red + ", 0, 0)";
+        elem1.style.color = "rgb(" + color_red + ", " + color_green + ", " + color_blue + ")";
+        });
+    </script>
+</body>
+</html>
